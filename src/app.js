@@ -5,8 +5,12 @@ var express = require('express'),
 
 var app = express();
 
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/templates')
+
 app.get('/', function(req, res){
-  res.send("<h1>I am IN Love with Treehouse and learning every courses!</h1>");
+  res.render('index')
+
 });
 
 app.get('/blog', function(req, res){
